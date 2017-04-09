@@ -5,13 +5,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.timelinedemo.R;
 import com.example.timelinedemo.fragments.FriendsStoriesListFragment;
 import com.example.timelinedemo.fragments.MyStoriesListFragment;
 
 public class StoriesPagerAdapter extends FragmentPagerAdapter {
     private final String tabTitles[] = new String[]{"My Stories", "Friends Stories"};
+    private final int[] tabIcons = {R.drawable.ic_my_stories_state, R.drawable.ic_friends_stories_state};
 
-    public StoriesPagerAdapter(FragmentManager fm, Context context) {
+    public StoriesPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
@@ -34,6 +36,10 @@ public class StoriesPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return tabTitles[position];
+        return "";
+    }
+
+    public int getTabIcon(int position) {
+        return tabIcons[position];
     }
 }
